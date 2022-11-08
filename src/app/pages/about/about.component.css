@@ -1,4 +1,13 @@
-.centrado{
+.centrado {
     margin-left: center !important;
     margin-right: center !important;
+}
+
+#div1 {
+    float: left;
+    list-style: none;
+}
+
+#div2 {
+    list-style: none;
 }

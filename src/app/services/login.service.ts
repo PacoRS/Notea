@@ -14,20 +14,20 @@ export class LoginService {
 
   constructor(private authService: SocialAuthService,
     private router: Router) {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      if (this.loggedIn) {
-        if (this.originalPath) {
-          this.router.navigate([this.originalPath]);
-          this.originalPath = '';
-        } else
-          this.router.navigate(['']);
-      } else {
-        this.router.navigate(['/login']);
-      }
-    });
-  }
+      this.authService.authState.subscribe((user) => {
+        this.user = user;
+        this.loggedIn = (user != null);
+        if (this.loggedIn) {
+          if (this.originalPath) {
+            this.router.navigate([this.originalPath]);
+            this.originalPath = '';
+          } else
+            this.router.navigate(['']);
+        } else {
+          this.router.navigate(['/login']);
+        }
+      });
+    }
   isAuth(): boolean {
     return this.loggedIn;
   }
